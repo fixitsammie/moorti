@@ -7,4 +7,4 @@ Pillow
 django-password-reset
 
 
-django-social-auth
+social-auth-app-django==2.1.0
