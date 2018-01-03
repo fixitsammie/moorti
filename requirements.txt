@@ -1,0 +1,10 @@
+Django==1.11.3
+
+
+Pillow
+
+
+django-password-reset
+
+
+django-social-auth

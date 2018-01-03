@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+{% for campaign in campaigns %}
+<a href="{% url 'get_campaign_responses' campaign.slug %}">{{campaign.title}}</a>
+{% endfor %}
+
+</body>
+</html>
+{% endblock %}

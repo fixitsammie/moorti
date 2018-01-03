@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if campaign.user.userprofile.pic %}
+<img  src="{{ campaign.user.userprofile.pic.url }}" id="campaign-image">
+{% else %}
+<p>picture</p>
+{% endif %}
+
+{{ campaign.user.username }}
+<form method="POST" action=".">
+        {% csrf_token %}
+    {{form.as_p}}
+<input type="submit">
+</form>
+
+
+{% endblock %}

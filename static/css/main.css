@@ -1,0 +1,17 @@
+#campaign-image{
+border-radius:50%;
+width:200px;
+height:200px;
+}
+
+.response-list{
+    text-decoration:none;}
+
+.response-list li{
+text-decoration:none;
+list-style:none;
+    }
+
+.response-list:hover{
+background-color:rgb(214,214,214);
+    }
