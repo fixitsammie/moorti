@@ -21,5 +21,4 @@ whitenoise = "*"
 
 
 [requires]
-[requires]
 python_version = "3.6.3"
