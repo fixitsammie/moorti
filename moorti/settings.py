@@ -86,8 +86,18 @@ WSGI_APPLICATION = 'moorti.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
+        'NAME': 'dbpostgresmoorti',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST':'moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com'
+        'PORT':5432
+        'USER': 'moortiusernameone',
+        'PASSWORD': 'moortinipassword'
+    },
+    'local': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
@@ -205,4 +215,9 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-
+#moortinipassword
+#database_name:dbpostgresmoorti
+db_name='dbpostgresmoorti'
+db_username='moortiusernameone'
+end_point_db='moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com'
+db_port=5432
