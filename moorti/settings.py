@@ -92,8 +92,7 @@ DATABASES = {
     'default': {
         'NAME': 'dbpostgresmoorti',
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST':'moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com',
-        'PORT':5432,
+        'HOST':'moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com:5432',
         'USER': 'moortiusernameone',
         'PASSWORD': 'moortinipassword'
     },
