@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+import dj-database-url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,13 +86,13 @@ WSGI_APPLICATION = 'moorti.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-
+"""
 
 DATABASES = {
     'default': {
         'NAME': 'dbpostgresmoorti',
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST':'moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com:5432',
+        'HOST':'http://moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com:5432',
         'USER': 'moortiusernameone',
         'PASSWORD': 'moortinipassword'
     },
@@ -102,7 +102,8 @@ DATABASES = {
     }
 }
 
-
+"""
+DATABASE['default']='postgres://moortiusernameone:moortinipassword@moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com:5432/dbpostgresmoorti?sslmode=verify-full&sslrootcert=config/rds-combined-ca-bundle.pem'
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
