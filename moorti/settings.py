@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'feed.apps.FeedConfig',
     'myregistration',
     'social_django',
+    'storages',
    
 ]
 
@@ -135,15 +136,32 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+
+
+STATIC_ROOT= os.path.join(BASE_DIR, "staticfiles")
+
+AWS_ACCESS_KEY_ID = 'AKIAI5DK3TRZNPR6PJAA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'moortistaticassetsbucket'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+
+#STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 
  
 ]
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATIC_ROOT= os.path.join(BASE_DIR, "staticfiles")
+DEFAULT_FILE_STORAGE = 'moorti.storage_backends.MediaStorage'
+
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT= os.path.join(BASE_DIR, "media")
@@ -185,4 +203,6 @@ SOCIALACCOUNT_PROVIDERS = {
     },
    
 }
+
+
 

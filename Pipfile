@@ -13,12 +13,16 @@ django-password-reset = "*"
 social-auth-app-django = "==2.1.0"
 dj-database-url = "*"
 gunicorn = "*"
-psycopg2 = "*"
+"psycopg2" = "*"
 whitenoise = "*"
+"boto3" = "*"
+django-storages = "*"
 
 
 [dev-packages]
 
 
+
 [requires]
+
 python_version = "3.6.2"
