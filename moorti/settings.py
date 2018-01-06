@@ -104,11 +104,7 @@ DATABASES = {
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-"""
-DATABASE={'default':'postgres://moortiusernameone:moortinipassword@moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com:5432/dbpostgresmoorti?sslmode=verify-full&sslrootcert=config/rds-combined-ca-bundle.pem'}
-# Password validation
-# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-""""
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
