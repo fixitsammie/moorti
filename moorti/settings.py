@@ -103,7 +103,7 @@ DATABASES = {
 }
 
 """
-DATABASE{'default':'postgres://moortiusernameone:moortinipassword@moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com/dbpostgresmoorti?sslmode=verify-full&sslrootcert=config/rds-combined-ca-bundle.pem'}
+DATABASE={'default':'postgres://moortiusernameone:moortinipassword@moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com:5432/dbpostgresmoorti?sslmode=verify-full&sslrootcert=config/rds-combined-ca-bundle.pem'
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
