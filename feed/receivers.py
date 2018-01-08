@@ -22,6 +22,6 @@ def ensure_profile_exists(sender, **kwargs):
     if kwargs.get('created', False):
         UserProfile.objects.get_or_create(user=kwargs.get('instance'))
     user=kwargs.get('instance')
-    campaign=Campaign.objects.get_or_create(title=user.username,slug=user.username,user=user)
+    campaign=Campaign.objects.get_or_create(title=user.username,user=user)
     print('we dey alright')
     
