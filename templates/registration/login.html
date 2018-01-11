@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load i18n %}
 {% block external %}
 
@@ -26,11 +26,12 @@
 <p><input id="id_password" name="password" type="password" class="form-control"  required /></p>
 
 <input type="submit" value="Sign in"/>
+</form>
 
+  
+  <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static "img/facebook.png" %}" alt="Login with Facebook" height=100></a>
        
   <div class="password-reset-link">
     <a href="{% url 'password_reset_recover' %}">{% trans 'Forgotten password?' %}</a>
   </div>
-  
-  <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
 {% endblock %}

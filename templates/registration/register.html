@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block external %}
 
 <link href="{{ STATIC_URL }}css/signin.css" rel="stylesheet">
@@ -37,6 +37,8 @@
 
 <input type="submit" value="Register"/>
 </form>
+ <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static "img/facebook.png" %}" alt="Login with Facebook" height=100></a>
+    
 
 
 {% endblock %}
