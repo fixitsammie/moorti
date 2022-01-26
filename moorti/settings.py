@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*!27o7o*tn(q6^5wzluezb6ac*7d#t&q7q3)@#f#@6vz+(90o%'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 SITE_ID = 1
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -92,9 +92,9 @@ DATABASES = {
     'default': {
         'NAME': 'dbpostgresmoorti',
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST':'http://moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com:5432',
-        'USER': 'moortiusernameone',
-        'PASSWORD': 'moortinipassword'
+        'HOST': os.getenv('AWS_DB_URL'),
+        'USER': os.getenv('AWS_DB_USERNAME'),
+        'PASSWORD': os.getenv('AWS_DB_PASSWORD')
     },
     'local': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -148,9 +148,9 @@ USE_TZ = True
 
 STATIC_ROOT= os.path.join(BASE_DIR, "staticfiles")
 
-AWS_ACCESS_KEY_ID = 'AKIAI5DK3TRZNPR6PJAA'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'moortistaticassetsbucket'
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -177,12 +177,10 @@ MEDIA_ROOT= os.path.join(BASE_DIR, "media")
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
-SOCIAL_AUTH_TWITTER_KEY = '9TD12xahCWCDdyLzpmw61GSM9'
-SOCIAL_AUTH_TWITTER_SECRET = 'mwtdcUe4uOvvJjDk2AuQ9Mq2xiHPw3740m5iGLf6hwg3B4TNSx'
-#SOCIAL_AUTH_FACEBOOK_KEY="135569913790943"
-#SOCIAL_AUTH_FACEBOOK_SECRET= "0b5c5f3cbf684f62eaba7adac12db9cc"
-SOCIAL_AUTH_FACEBOOK_KEY="204577913446792"
-SOCIAL_AUTH_FACEBOOK_SECRET="fe2d6a8042f1b407324c16d9b8a99359"
+SOCIAL_AUTH_TWITTER_KEY = os.getenv('SOCIAL_AUTH_TWITTER_KEY')
+SOCIAL_AUTH_TWITTER_SECRET = os.getenv('SOCIAL_AUTH_TWITTER_SECRET')
+SOCIAL_AUTH_FACEBOOK_KEY=os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET=os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/settings/'
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
@@ -212,10 +210,3 @@ SOCIALACCOUNT_PROVIDERS = {
    
 }
 
-
-#moortinipassword
-#database_name:dbpostgresmoorti
-db_name='dbpostgresmoorti'
-db_username='moortiusernameone'
-end_point_db='moortipostgresone.czwdkshkx0py.us-east-2.rds.amazonaws.com'
-db_port=5432
